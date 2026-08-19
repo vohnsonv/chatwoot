@@ -15,7 +15,7 @@ class Platform::Api::V1::UsersController < PlatformController
   end
 
   def login
-    render json: { url: @resource.generate_sso_link }
+    render json: { url: @resource.generate_sso_link(base_url: request.base_url) }
   end
 
   def token; end

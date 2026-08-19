@@ -22,6 +22,10 @@ ENV RAILS_ENV ${RAILS_ENV}
 ARG NODE_OPTIONS="--max-old-space-size=4096 --openssl-legacy-provider"
 ENV NODE_OPTIONS ${NODE_OPTIONS}
 
+# MaviChat UI customization flags (build-time, consumed via import.meta.env.VITE_*)
+ARG VITE_HIDE_CAPTAIN="false"
+ENV VITE_HIDE_CAPTAIN=${VITE_HIDE_CAPTAIN}
+
 ENV BUNDLE_PATH="/gems"
 
 RUN apk update && apk add --no-cache \

@@ -930,7 +930,10 @@ const menuItems = computed(() => {
         },
       ],
     },
-  ];
+  ].filter(
+    item =>
+      !(import.meta.env.VITE_HIDE_CAPTAIN === 'true' && item.name === 'Captain')
+  );
 });
 </script>
 
